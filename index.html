@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Para mi nena 🌻</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: Georgia, serif;
+      background: radial-gradient(circle at center, #18243d 0%, #080b14 70%);
+      color: white;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px);
+      background-size: 80px 80px, 130px 130px;
+      background-position: 10px 20px, 50px 70px;
+      opacity: 0.45;
+      animation: stars 8s linear infinite;
+    }
+
+    @keyframes stars {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(30px);
+      }
+    }
+
+    .flower {
+      position: absolute;
+      font-size: 38px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .flower1 {
+      top: 12%;
+      left: 10%;
+    }
+
+    .flower2 {
+      top: 70%;
+      right: 10%;
+      animation-delay: 1s;
+    }
+
+    .flower3 {
+      bottom: 12%;
+      left: 18%;
+      font-size: 28px;
+      animation-delay: 2s;
+    }
+
+    .flower4 {
+      top: 20%;
+      right: 15%;
+      font-size: 25px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+    }
+
+    .planet {
+      position: absolute;
+      opacity: 0.8;
+    }
+
+    .jupiter {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background:
+        linear-gradient(
+          160deg,
+          #d9b58a,
+          #9b6845 35%,
+          #e1c49a 50%,
+          #8a573b 70%,
+          #c18b5c
+        );
+      left: -35px;
+      bottom: 12%;
+      box-shadow: 0 0 35px rgba(220, 180, 130, 0.25);
+    }
+
+    .saturn {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #d6bd8b;
+      right: -20px;
+      top: 10%;
+      box-shadow: 0 0 30px rgba(220, 190, 130, 0.25);
+    }
+
+    .saturn::after {
+      content: "";
+      position: absolute;
+      width: 115px;
+      height: 28px;
+      border: 3px solid #bca678;
+      border-radius: 50%;
+      top: 22px;
+      left: -24px;
+      transform: rotate(-15deg);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .small {
+      font-size: 16px;
+      letter-spacing: 3px;
+      opacity: 0.8;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 10vw, 65px);
+      margin: 0;
+      color: #ffe27a;
+      text-shadow: 0 0 20px rgba(255, 220, 100, 0.25);
+    }
+
+    .message {
+      max-width: 500px;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 20px 0 30px;
+      opacity: 0.9;
+    }
+
+    button {
+      border: none;
+      padding: 15px 35px;
+      border-radius: 30px;
+      background: #f5cf4d;
+      color: #17130a;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(245, 207, 77, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 35px rgba(245, 207, 77, 0.45);
+    }
+
+    .hint {
+      margin-top: 20px;
+      font-size: 13px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <div class="flower flower1">🌻</div>
+  <div class="flower flower2">🌻</div>
+  <div class="flower flower3">🌻</div>
+  <div class="flower flower4">🌻</div>
+
+  <div class="planet jupiter"></div>
+  <div class="planet saturn"></div>
+
+  <main class="content">
+
+    <div class="small">21 DE SEPTIEMBRE</div>
+
+    <h1>Para mi nena 🌻</h1>
+
+    <p class="message">
+      Tengo algo preparado para vos...
+      <br>
+      pero vas a tener que descubrirlo.
+    </p>
+
+    <button onclick="comenzar()">
+      COMENZAR 🌻
+    </button>
+
+    <div class="hint">
+      Hecho especialmente para vos.
+    </div>
+
+  </main>
+
+  <script>
+    function comenzar() {
+      alert("👀 Esto recién empieza, nena...");
+    }
+  </script>
+
+</body>
+</html>

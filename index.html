@@ -6,6 +6,7 @@
 <title>Para mi nena 🌻</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -34,7 +35,6 @@ body {
 
 .page.active {
     display: flex;
-    animation: aparecer 1.2s ease;
 }
 
 .contenido {
@@ -70,46 +70,226 @@ p {
 
 .boton {
     border: none;
-    border
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #e1c76b;
+    color: #17120a;
+    margin-top: 20px;
+}
+
+.flower {
+    position: fixed;
+    font-size: 35px;
+    animation: flotar 5s ease-in-out infinite;
+    z-index: 2;
+}
+
+.flower1 {
+    top: 10%;
+    left: 10%;
+}
+
+.flower2 {
+    top: 20%;
+    right: 10%;
+}
+
+.flower3 {
+    bottom: 15%;
+    left: 15%;
+}
+
+.flower4 {
+    bottom: 10%;
+    right: 15%;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 90px 90px, 140px 140px;
+    background-position: 0 0, 40px 60px;
+    opacity: .5;
+    z-index: 1;
+}
+
+.planet {
+    position: fixed;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: .6;
+}
+
+.jupiter {
+    width: 180px;
+    height: 180px;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #b88b5a 0px,
+            #d8b48a 18px,
+            #8b6344 30px,
+            #c69b6c 45px
+        );
+    right: -60px;
+    top: 35%;
+}
+
+.saturn {
+    width: 120px;
+    height: 120px;
+    background: #c5a46d;
+    left: -40px;
+    bottom: 25%;
+}
+
+.saturn::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 45px;
+    border: 5px solid #c8b995;
+    border-radius: 50%;
+    top: 38px;
+    left: -35px;
+    transform: rotate(-15deg);
+}
+
+</style>
+</head>
+
 <body>
 
-  <div class="stars"></div>
+<div class="stars"></div>
 
-  <div class="flower flower1">🌻</div>
-  <div class="flower flower2">🌻</div>
-  <div class="flower flower3">🌻</div>
-  <div class="flower flower4">🌻</div>
+<div class="flower flower1">🌻</div>
+<div class="flower flower2">🌻</div>
+<div class="flower flower3">🌻</div>
+<div class="flower flower4">🌻</div>
 
-  <div class="planet jupiter"></div>
-  <div class="planet saturn"></div>
+<div class="planet jupiter"></div>
+<div class="planet saturn"></div>
 
-  <main class="content">
+<section class="page active" id="pagina1">
 
-    <div class="small">21 DE SEPTIEMBRE</div>
+    <div class="contenido">
 
-    <h1>Para mi nena 🌻</h1>
+        <div class="fecha">
+            21 DE SEPTIEMBRE
+        </div>
 
-    <p class="message">
-      Tengo algo preparado para vos...
-      <br>
-      pero vas a tener que descubrirlo.
-    </p>
+        <h1>
+            Para mi nena 🌻
+        </h1>
 
-    <button onclick="comenzar()">
-      COMENZAR 🌻
-    </button>
+        <p>
+            Tengo algo preparado para vos...
+            <br>
+            pero vas a tener que descubrirlo.
+        </p>
 
-    <div class="hint">
-      Hecho especialmente para vos.
+        <button class="boton" onclick="siguiente(2)">
+            COMENZAR 🌻
+        </button>
+
     </div>
 
-  </main>
+</section>
 
-  <script>
-    function comenzar() {
-      alert("👀 Esto recién empieza, nena...");
-    }
-  </script>
+
+<section class="page" id="pagina2">
+
+    <div class="contenido">
+
+        <h2>
+            Hay algo que quiero que sepas
+        </h2>
+
+        <p>
+            Entre tantas personas, momentos y casualidades,
+            me alegra muchísimo que nuestros caminos se hayan cruzado.
+        </p>
+
+        <p>
+            Quizás no siempre encuentro las palabras correctas,
+            pero hay personas que simplemente se vuelven importantes
+            sin necesidad de explicarlo demasiado.
+        </p>
+
+        <p>
+            Y entre conversaciones, bromas, momentos bonitos
+            y mucho "ush"... terminé enamorándome de una loca.
+        </p>
+
+        <p>
+            Una loca que, para mi suerte,
+            también se convirtió en mi nena. 🌻
+        </p>
+
+        <button class="boton" onclick="siguiente(3)">
+            CONTINUAR 🌻
+        </button>
+
+    </div>
+
+</section>
+
+
+<section class="page" id="pagina3">
+
+    <div class="contenido">
+
+        <h2>
+            Y esto recién empieza... 👀
+        </h2>
+
+        <p>
+            Porque todavía quedan muchas cosas por decir,
+            muchos momentos por vivir y muchas razones para sonreír.
+        </p>
+
+        <p>
+            Así que guardá este pequeño regalo,
+            porque fue hecho pensando especialmente en vos.
+        </p>
+
+        <p>
+            Te quiero mucho, nena. 🌻
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function siguiente(numero) {
+
+    document.querySelectorAll(".page").forEach(function(pagina) {
+        pagina.classList.remove("active");
+    });
+
+    document.getElementById("pagina" + numero).classList.add("active");
+}
+
+</script>
 
 </body>
 </html>
